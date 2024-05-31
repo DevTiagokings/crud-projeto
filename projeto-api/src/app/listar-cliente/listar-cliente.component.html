@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes">
+            <th scope="row">{{cliente.id}}</th>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.endereco}}</td>
+            <td>
+                <button mat-raised-button color="primary" [routerLink]="'../editar/' + cliente.id">Editar</button>
+            </td>
+            <td>
+                <button mat-raised-button color="warn">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
