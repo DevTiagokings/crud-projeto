@@ -19,4 +19,15 @@ export class ClienteService {
     return this._httpClient.post<Cliente[]>(this.url, cliente);
     }
 
+  getCliente(id:any):Observable<Cliente[]>{
+    const urlListarUm = `${this.url}?id=${id}`;
+    return this._httpClient.get<Cliente[]>(urlListarUm);
+    }  
+
+  atualizarCliente(id: any, cliente: Cliente):Observable<Cliente[]>{
+    const urlAtualizar = `${this.url}/${id}`;
+    return this._httpClient.put<Cliente[]>(urlAtualizar, cliente);
+    }
+      
+
 }
