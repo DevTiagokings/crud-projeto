@@ -13,12 +13,11 @@
             <th scope="row">{{cliente.id}}</th>
             <td>{{cliente.nome}}</td>
             <td>{{cliente.endereco}}</td>
-            <td>
-                <button mat-raised-button color="primary" [routerLink]="'../editar/' + cliente.id">Editar</button>
-            </td>
-            <td>
-                <button mat-raised-button color="warn">Excluir</button>
-            </td>
+            <td><a mat-raised-button color="primary"
+        routerLink="../editar/{{cliente.id}}">Editar</a></td>
+            <td><a mat-raised-button color="warn"
+        (click)="excluir(cliente.id)">Excluir</a></td>
         </tr>
     </tbody>
-</table>
+    </table>
+    

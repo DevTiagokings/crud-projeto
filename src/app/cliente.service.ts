@@ -29,5 +29,10 @@ export class ClienteService {
     return this._httpClient.put<Cliente[]>(urlAtualizar, cliente);
     }
       
+  excluirCliente(id:any):Observable<Cliente[]>{
+    const urlExcluir = `${this.url}/${id}`;
+    return this._httpClient.delete<Cliente[]>(urlExcluir);
+    }
+      
 
 }
